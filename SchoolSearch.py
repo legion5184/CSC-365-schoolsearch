@@ -8,3 +8,22 @@ class Student:
         self.Bus = Bus
         self.GPA = GPA
         self.TLastName = TLastName
+
+
+if __name__ == '__main__':
+    Students = []
+
+    file = open("students.txt", 'r')
+    while(True):
+        content = file.readline()
+        if not content:
+            break
+        std_info = content.split();
+        Students.append(Student(std_info))
+
+    file.close()
+
+
+
+
+
