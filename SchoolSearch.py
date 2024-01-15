@@ -10,30 +10,6 @@ class Student:
         self.TLastName = Student[6]
         self.TFirstName = Student[7]
 
-    def getStLastName(self):
-        return self.StLastName
-
-    def getStFirstName(self):
-        return self.StFirstName
-
-    def getGrade(self):
-        return self.Grade
-
-    def getClassroom(self):
-        return self.Classroom
-
-    def getBus(self):
-        return self.Bus
-
-    def getGPA(self):
-        return self.GPA
-
-    def getTLastName(self):
-        return self.TLastName
-
-    def getTFirstName(self):
-        return self.TFirstName
-
     def printStudent(self):
         print(
             f"{self.StLastName},{self.StFirstName},{self.Grade},{self.Classroom},{self.Bus},{self.GPA},{self.TLastName},{self.TFirstName}")
@@ -42,15 +18,10 @@ class Student:
 if __name__ == '__main__':
     Students = []
 
-    file = open("students.txt", 'r')
-    while True:
-        content = file.readline()
-        if not content:
-            break
-        std_info = content.split(",")
-        Students.append(Student(std_info))
-
-    file.close()
+    with open("students.txt", 'r') as file:
+        for content in file:
+            std_info = content.strip().split(",")
+            Students.append(Student(std_info))
 
     while True:
         user_input = input("Input:\n").strip().split()
@@ -59,6 +30,7 @@ if __name__ == '__main__':
         if user_input[0] == "Q" or user_input[0] == "Quit":
             break
 
+        # Info
         if user_input[0] == "I" or user_input[0] == "Info":
             # Create info array
             info_arr = [0, 0, 0, 0, 0, 0, 0]
@@ -78,34 +50,93 @@ if __name__ == '__main__':
             else:
                 for item in Students:
                     if item.Bus == int(user_input[1]):
-                        print(f"{item.StLastName}, {item.StLastName}, {item.Grade}, {item.Classroom}")
+                        print(f"{item.StLastName}, {item.StFirstName}, {item.Grade}, {item.Classroom}")
 
         # Average
         if user_input[0] == "A" or user_input[0] == "Average":
-            # Average Action goes here
-            pass
+            # Ensure user enters valid value
+            try:
+                grade_level = int(user_input[1])
+            except ValueError:
+                print("Enter a valid grade (non-decimal)")
+                continue
 
+            total = 0
+            students = 0
+            # If incorrect args amount, do nothing
+            if len(user_input) < 2:
+                pass
+            # Iterate through students
+            else:
+                for item in Students:
+                    if item.Grade == grade_level:
+                        total += float(item.GPA)
+                        students += 1
+                if students == 0:
+                    print("No students of that grade. Re-prompt")
+                else:
+                    print(f"{user_input[1]}, {(float(total) / float(students)):0.2f}")
+
+        # Teacher
         if user_input[0] == "T" or user_input[0] == "Teacher":
-            # Teacher Action goes here
-            pass
+            # Test correct args
+            if len(user_input) < 2:
+                pass
+            # Iterate through list
+            else:
+                for item in Students:
+                    if item.TLastName == user_input[1]:
+                        print(f"{item.StLastName}, {item.StFirstName}")
 
+        # Student
         if user_input[0] == "S" or user_input[0] == "Student":
-            try:
-                if user_input[2] == "B" or user_input[2] == "Bus":
-                    # put bus option for student here
-                    pass
-            except IndexError:
-                # put no bus option for student here:
+            if len(user_input) == 1:
                 pass
+            elif len(user_input) <= 3:
+                try:
+                    if user_input[2] == "B" or user_input[2] == "Bus":
+                        # Bus Option
+                        for item in Students:
+                            if item.StLastName == user_input[1]:
+                                print(f"{item.StLastName},{item.StFirstName},{item.Bus}")
+                except IndexError:
+                    # No Bus Option
+                    for item in Students:
+                        if item.StLastName == user_input[1]:
+                            print(
+                                f"{item.StLastName},{item.StFirstName},{item.Grade},{item.Classroom}, {item.TLastName},{item.TFirstName}")
 
+        # Grade
         if user_input[0] == "G" or user_input[0] == "Grade":
-            try:
-                if user_input[2] == "H" or user_input[2] == "High":
-                    # put High option for Grade here
-                    pass
-                if user_input[2] == "L" or user_input[2] == "Low":
-                    # put low option for grade here
-                    pass
-            except IndexError:
-                # put no bound option for grade here
-                pass
+            if len(user_input) <= 3 and len(user_input) != 1:
+                try:
+                    # High Option
+                    if user_input[2] == "H" or user_input[2] == "High":
+                        max_grade = 0
+                        best_student = 0
+                        for item in Students:
+                            if (item.Grade == int(user_input[1])) and (float(item.GPA) > float(max_grade)):
+                                max_grade = item.GPA
+                                best_student = item
+                        print(
+                            f"{best_student.StLastName}, {best_student.StFirstName}, {best_student.GPA}, "
+                            f"{best_student.TLastName}, {best_student.TFirstName}, {best_student.Bus}"
+                        )
+                    # Low Option
+                    if user_input[2] == "L" or user_input[2] == "Low":
+                        # put low option for grade here
+                        min_grade = 4
+                        best_student = 0
+                        for item in Students:
+                            if (item.Grade == int(user_input[1])) and (float(item.GPA) < float(min_grade)):
+                                min_grade = item.GPA
+                                best_student = item
+                        print(
+                            f"{best_student.StLastName}, {best_student.StFirstName}, {best_student.GPA}, "
+                            f"{best_student.TLastName}, {best_student.TFirstName}, {best_student.Bus}"
+                        )
+                except IndexError:
+                    # No Bound Option
+                    for item in Students:
+                        if item.Grade == int(user_input[1]):
+                            print(f"{item.StLastName}, {item.StFirstName}")
