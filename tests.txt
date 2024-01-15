@@ -1,0 +1,21 @@
+// TC-1
+// Tests Requirements: R12
+// quit command
+// Expected output: Program terminates
+
+Q
+
+// TC-2
+// Tests Requirements: R11
+// short form, long form info command
+// Expected Output:
+// 0: 0
+// 1: 2
+// 2: 13
+// 3: 9
+// 4: 15
+// 5: 0
+// 6: 21
+
+I
+Info
