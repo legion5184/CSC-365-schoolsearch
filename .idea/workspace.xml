@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="644d919e-c01f-4d82-825b-abf8ec98f01a" name="Default Changelist" comment="Test changes">
+    <list default="true" id="644d919e-c01f-4d82-825b-abf8ec98f01a" name="Default Changelist" comment="multiple students with same gpa fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SchoolSearch.py" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolSearch.py" afterDir="false" />
     </list>
@@ -168,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1705436136973</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="multiple students with same gpa fix">
+      <created>1705437215629</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1705437215629</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,6 +197,7 @@
     <MESSAGE value="Finishing test suites, added error checking in bus option for G" />
     <MESSAGE value="small input change" />
     <MESSAGE value="Test changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test changes" />
+    <MESSAGE value="multiple students with same gpa fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="multiple students with same gpa fix" />
   </component>
 </project>
