@@ -25,6 +25,7 @@ if __name__ == '__main__':
 
     while True:
         user_input = input("Input:\n").strip().split()
+        user_input[0] = user_input[0].strip(':')
 
         # Quit
         if user_input[0] == "Q" or user_input[0] == "Quit":
