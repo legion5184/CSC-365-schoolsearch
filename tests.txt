@@ -22,7 +22,7 @@ Info
 
 // TC-3
 // Tests Requirements: R8
-// short form, long form info command
+// Bus command short form, existing bus
 // Expected Output:
 // XUAN, COOKUS, 3, 107
 // SHANTE, ELHADDAD, 3, 107
@@ -34,4 +34,126 @@ Info
 // ROSETTA, KEMERER, 6, 102
 
 B 52
-Bus 52
+
+// TC-4
+// Tests Requirements: R8
+// Bus command long form, non-existant bus
+// Expected Output: <empty line>
+
+Bus 4
+
+
+// TC-5
+// Tests Requirements: R10
+// Compute Average Grade using short form
+// Expected Output:
+// 2, 2.95
+
+A 2
+
+// TC-6
+// Tests Requirements: R10
+// Compute average of grade with no entries, long form command
+// Expected Output:
+// No students of that grade. Re-prompt
+
+Average 0
+
+// TC-7
+// Tests Requirements: R6
+// Teacher command with existing teacher, short form
+// Expected Output:
+// CORKER, CARTER
+// IMMERMAN, DEVIN
+// RAPOSE, ALONZO
+// OGAS, ERVIN
+// MASSART, ELDON
+// BEX, TAMESHA
+
+T HANTZ
+
+// TC-8
+// Tests Requirements: R6
+// Teacher Command with non-existant teacher, Long form
+// Expected Output: <empty line>
+
+Teacher SMITH
+
+// TC-9
+// Tests Requirements: R4
+// Student Command short form, no bus option
+// Expected Output: SARAO,DIEDRA,2,108, HAMER,GAVIN
+
+S SARAO
+
+// TC-10
+// Tests Requirements: R4
+// Student Command Long form, no bus option, Student Nonexistant
+// Expected Output: <empty line>
+
+Student SMELVIN
+
+// TC-10
+// Tests Requirements: R5
+// Student Command Long form, bus option
+// Expected Output: GLOR,HUNG,54
+
+Student Glor Bus
+
+// TC-11
+// Tests Requirements: R5
+// Student Command short form, bus option
+// Expected Output: GLOR,HUNG,54
+
+S HUNG B
+
+// TC-12
+// Tests Requirements: R5
+// Student Command short form, bus option, Student Nonexistant
+// Expected Output: <empty line>
+
+S SHREK B
+
+// TC-13
+// Tests Requirements: R9
+// Grade Command short form, high option
+// Expected Output: SWEDLUND, SHARRI, 3.24, FAFARD, ROCIO, 55
+
+G 3 H
+
+// TC-14
+// Tests Requirements: R9
+// Grade Command Long form, Low option
+// Expected Output: KOZOLA, BUSTER, 2.76, HAMER, GAVIN, 55
+
+Grade 2 Low
+
+// TC-15
+// Tests Requirements: R9
+// Grade Command short form, Low option, Grade has no students/non-existant
+// Expected Output: <empty line>
+
+G 5 L
+
+// TC-15
+// Tests Requirements: R7
+// Grade Command short form,
+// Expected Output:
+// COOKUS, XUAN
+// ELHADDAD, SHANTE
+// BRODERSEN, HYE
+// SWEDLUND, SHARRI
+// CIGANEK, MANIE
+// COVINGTON, TOMAS
+// EARLY, TORY
+// LINHART, LELA
+// THEUNISSEN, GRACE
+
+G 3
+
+// TC-15
+// Tests Requirements: R7
+// Grade Command Long form, grade has no students/non-existant
+// Expected Output: <empty line>
+
+Grade 11
