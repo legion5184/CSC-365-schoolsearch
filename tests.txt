@@ -19,3 +19,19 @@ Q
 
 I
 Info
+
+// TC-3
+// Tests Requirements: R8
+// short form, long form info command
+// Expected Output:
+// XUAN, COOKUS, 3, 107
+// SHANTE, ELHADDAD, 3, 107
+// DEVIN, IMMERMAN, 4, 105
+// STAN, OBREIN, 6, 111
+// DIMPLE, CORONADO, 6, 102
+// DIEDRA, SARAO, 2, 108
+// TORY, EARLY, 3, 107
+// ROSETTA, KEMERER, 6, 102
+
+B 52
+Bus 52

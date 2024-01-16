@@ -6,7 +6,7 @@ class Student:
         self.Grade = int(Student[2])
         self.Classroom = int(Student[3])
         self.Bus = int(Student[4])
-        self.GPA = Student[5]
+        self.GPA = float(Student[5])
         self.TLastName = Student[6]
         self.TFirstName = Student[7]
 
@@ -78,11 +78,10 @@ if __name__ == '__main__':
             else:
                 for item in Students:
                     if item.Bus == int(user_input[1]):
-                        print(f"{item.StLastName}, {item.StLastName}, {item.Grade}, {item.Classroom}")
+                        print(f"{item.StLastName}, {item.StFirstName}, {item.Grade}, {item.Classroom}")
 
         # Average
         if user_input[0] == "A" or user_input[0] == "Average":
-            # Average Action goes here
             pass
 
         if user_input[0] == "T" or user_input[0] == "Teacher":
