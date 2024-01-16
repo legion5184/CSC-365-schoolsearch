@@ -119,14 +119,10 @@ if __name__ == '__main__':
                             if (item.Grade == int(user_input[1])) and (float(item.GPA) > float(max_grade)):
                                 max_grade = item.GPA
                                 best_student = item
-                        try:
-                            print(
-                                f"{best_student.StLastName}, {best_student.StFirstName}, {best_student.GPA}, "
-                                f"{best_student.TLastName}, {best_student.TFirstName}, {best_student.Bus}"
-                            )
-                        # case of incorrect grade input
-                        except AttributeError:
-                            pass
+                        print(
+                            f"{best_student.StLastName}, {best_student.StFirstName}, {best_student.GPA}, "
+                            f"{best_student.TLastName}, {best_student.TFirstName}, {best_student.Bus}"
+                        )
                     # Low Option
                     if user_input[2] == "L" or user_input[2] == "Low":
                         # put low option for grade here
