@@ -113,23 +113,33 @@ if __name__ == '__main__':
                 try:
                     # High Option
                     if user_input[2] == "H" or user_input[2] == "High":
+                        high_set = set()
                         max_grade = 0
                         best_student = 0
                         for item in Students:
                             if (item.Grade == int(user_input[1])) and (float(item.GPA) > float(max_grade)):
                                 max_grade = item.GPA
                                 best_student = item
+
+                        high_set.add(best_student)
+
+                        for item in Students:
+                            if (item.Grade == int(user_input[1])) and (float(item.GPA) == float(best_student.GPA)):
+                                high_set.add(item)
+
                         try:
-                            print(
-                                f"{best_student.StLastName}, {best_student.StFirstName}, {best_student.GPA}, "
-                                f"{best_student.TLastName}, {best_student.TFirstName}, {best_student.Bus}"
-                            )
+                            for student in high_set:
+                                print(
+                                    f"{student.StLastName}, {student.StFirstName}, {student.GPA}, "
+                                    f"{student.TLastName}, {student.TFirstName}, {student.Bus}"
+                                )
                         # case of incorrect grade input
                         except AttributeError:
                             pass
                     # Low Option
                     if user_input[2] == "L" or user_input[2] == "Low":
                         # put low option for grade here
+                        low_set = set()
                         min_grade = 4
                         best_student = 0
                         for item in Students:
@@ -137,11 +147,18 @@ if __name__ == '__main__':
                                 min_grade = item.GPA
                                 best_student = item
 
+                        low_set.add(best_student)
+
+                        for item in Students:
+                            if (item.Grade == int(user_input[1])) and (float(item.GPA) == float(best_student.GPA)):
+                                high_set.add(item)
+
                         try:
-                            print(
-                                f"{best_student.StLastName}, {best_student.StFirstName}, {best_student.GPA}, "
-                                f"{best_student.TLastName}, {best_student.TFirstName}, {best_student.Bus}"
-                            )
+                            for student in low_set:
+                                print(
+                                    f"{student.StLastName}, {student.StFirstName}, {student.GPA}, "
+                                    f"{student.TLastName}, {student.TFirstName}, {student.Bus}"
+                                )
                         #case of incorrect grade input
                         except AttributeError:
                             pass
