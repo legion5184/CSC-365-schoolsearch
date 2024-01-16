@@ -33,14 +33,14 @@ Info
 // TORY, EARLY, 3, 107
 // ROSETTA, KEMERER, 6, 102
 
-B 52
+B: 52
 
 // TC-4
 // Tests Requirements: R8
 // Bus command long form, non-existant bus
 // Expected Output: <empty line>
 
-Bus 4
+Bus: 4
 
 
 // TC-5
@@ -49,7 +49,7 @@ Bus 4
 // Expected Output:
 // 2, 2.95
 
-A 2
+A: 2
 
 // TC-6
 // Tests Requirements: R10
@@ -57,7 +57,7 @@ A 2
 // Expected Output:
 // No students of that grade. Re-prompt
 
-Average 0
+Average: 0
 
 // TC-7
 // Tests Requirements: R6
@@ -70,70 +70,70 @@ Average 0
 // MASSART, ELDON
 // BEX, TAMESHA
 
-T HANTZ
+T: HANTZ
 
 // TC-8
 // Tests Requirements: R6
 // Teacher Command with non-existant teacher, Long form
 // Expected Output: <empty line>
 
-Teacher SMITH
+Teacher: SMITH
 
 // TC-9
 // Tests Requirements: R4
 // Student Command short form, no bus option
 // Expected Output: SARAO,DIEDRA,2,108, HAMER,GAVIN
 
-S SARAO
+S: SARAO
 
 // TC-10
 // Tests Requirements: R4
 // Student Command Long form, no bus option, Student Nonexistant
 // Expected Output: <empty line>
 
-Student SMELVIN
+Student: SMELVIN
 
 // TC-10
 // Tests Requirements: R5
 // Student Command Long form, bus option
 // Expected Output: GLOR,HUNG,54
 
-Student Glor Bus
+Student: GLOR Bus
 
 // TC-11
 // Tests Requirements: R5
 // Student Command short form, bus option
 // Expected Output: GLOR,HUNG,54
 
-S HUNG B
+S: HUNG B
 
 // TC-12
 // Tests Requirements: R5
 // Student Command short form, bus option, Student Nonexistant
 // Expected Output: <empty line>
 
-S SHREK B
+S: SHREK B
 
 // TC-13
 // Tests Requirements: R9
 // Grade Command short form, high option
 // Expected Output: SWEDLUND, SHARRI, 3.24, FAFARD, ROCIO, 55
 
-G 3 H
+G: 3 H
 
 // TC-14
 // Tests Requirements: R9
 // Grade Command Long form, Low option
 // Expected Output: KOZOLA, BUSTER, 2.76, HAMER, GAVIN, 55
 
-Grade 2 Low
+Grade: 2 Low
 
 // TC-15
 // Tests Requirements: R9
 // Grade Command short form, Low option, Grade has no students/non-existant
 // Expected Output: <empty line>
 
-G 5 L
+G: 5 L
 
 // TC-15
 // Tests Requirements: R7
@@ -149,11 +149,11 @@ G 5 L
 // LINHART, LELA
 // THEUNISSEN, GRACE
 
-G 3
+G: 3
 
 // TC-15
 // Tests Requirements: R7
 // Grade Command Long form, grade has no students/non-existant
 // Expected Output: <empty line>
 
-Grade 11
+Grade: 11
