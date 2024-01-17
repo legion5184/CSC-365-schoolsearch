@@ -1,3 +1,5 @@
+Pablo Nguyen, Brandon Powell
+
 // TC-1
 // Tests Requirements: R12
 // quit command
@@ -24,14 +26,14 @@ Info
 // Tests Requirements: R8
 // Bus command short form, existing bus
 // Expected Output:
-// XUAN, COOKUS, 3, 107
-// SHANTE, ELHADDAD, 3, 107
-// DEVIN, IMMERMAN, 4, 105
-// STAN, OBREIN, 6, 111
-// DIMPLE, CORONADO, 6, 102
-// DIEDRA, SARAO, 2, 108
-// TORY, EARLY, 3, 107
-// ROSETTA, KEMERER, 6, 102
+// COOKUS, XUAN, 3, 107
+// ELHADDAD, SHANTE, 3, 107
+// IMMERMAN, DEVIN, 4, 105
+// OBREIN, STAN, 6, 111
+// CORONADO, DIMPLE, 6, 102
+// SARAO, DIEDRA, 2, 108
+// EARLY, TORY, 3, 107
+// KEMERER, ROSETTA, 6, 102
 
 B: 52
 
@@ -87,55 +89,55 @@ Teacher: SMITH
 S: SARAO
 
 // TC-10
-// Tests Requirements: R4
+// Tests Requirements: R4, E1
 // Student Command Long form, no bus option, Student Nonexistant
 // Expected Output: <empty line>
 
 Student: SMELVIN
 
-// TC-10
+// TC-11
 // Tests Requirements: R5
 // Student Command Long form, bus option
 // Expected Output: GLOR,HUNG,54
 
 Student: GLOR Bus
 
-// TC-11
+// TC-12
 // Tests Requirements: R5
 // Student Command short form, bus option
-// Expected Output: GLOR,HUNG,54
+// Expected Output: <empty line>
 
 S: HUNG B
 
-// TC-12
-// Tests Requirements: R5
-// Student Command short form, bus option, Student Nonexistant
+// TC-13
+// Tests Requirements: R5, E1
+// Student Command short form, bus option, Student Nonexistent
 // Expected Output: <empty line>
 
 S: SHREK B
 
-// TC-13
+// TC-14
 // Tests Requirements: R9
 // Grade Command short form, high option
 // Expected Output: SWEDLUND, SHARRI, 3.24, FAFARD, ROCIO, 55
 
 G: 3 H
 
-// TC-14
+// TC-15
 // Tests Requirements: R9
 // Grade Command Long form, Low option
 // Expected Output: KOZOLA, BUSTER, 2.76, HAMER, GAVIN, 55
 
 Grade: 2 Low
 
-// TC-15
+// TC-16
 // Tests Requirements: R9
 // Grade Command short form, Low option, Grade has no students/non-existant
 // Expected Output: <empty line>
 
 G: 5 L
 
-// TC-15
+// TC-17
 // Tests Requirements: R7
 // Grade Command short form,
 // Expected Output:
@@ -151,9 +153,18 @@ G: 5 L
 
 G: 3
 
-// TC-15
+// TC-18
 // Tests Requirements: R7
 // Grade Command Long form, grade has no students/non-existant
 // Expected Output: <empty line>
 
 Grade: 11
+
+// TC-19
+// Tests Requirements: R9
+// Grade Command Short form, when duplicate High Scores
+// Expected Output:
+// RAPOSE,ALONZO,4,105,51,3.12,HANTZ,JED
+// CORKER,CARTER,4,105,53,3.12,HANTZ,JED
+
+G: 4 H
